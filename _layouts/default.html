@@ -19,9 +19,13 @@
 <body>
 <header>
     <div class="inner">
-        <h1><a href="/">{{ site.name }}</a></h1>
+        <h1><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
         <h2>{{ site.slogan }}</h2>
-        <a href="https://github.com/P2EE" class="button"><small>Follow us on</small>GitHub</a>
+        {% if site.repoaction == "fork" %}
+        <a href="{{ site.repourl }}" class="button"><small>Fork on</small>GitHub</a>
+	{% else %}
+	<a href="{{ site.repourl }}" class="button"><small>Follow us on</small>GitHub</a>
+	{% endif %}
     </div>
 </header>
 
@@ -35,9 +39,10 @@
             <nav class="active projects">
                 <h3>Active projects</h3>
                 <ul>
-                    <li><a href="https://github.com/P2EE/preparables">p2ee/preparables</a></li>
-                    <li><a href="https://github.com/P2EE/baserequirements">p2ee/baserequirements</a></li>
-                    <li><a href="https://github.com/P2EE/partlets">p2ee/partlets</a></li>
+                    <li{% if site.project == "p2ee" %} class="active"{% endif %}><a href="http://p2ee.github.io/">the p2ee organisation</a></li>
+                    <li{% if site.project == "preparables" %} class="active"{% endif %}><a href="http://p2ee.github.io/preparables">p2ee/preparables</a></li>
+                    <li{% if site.project == "baserequirements" %} class="active"{% endif %}><a href="https://github.com/P2EE/baserequirements">p2ee/baserequirements</a></li>
+                    <li{% if site.project == "partlets" %} class="active"{% endif %}><a href="https://github.com/P2EE/partlets">p2ee/partlets</a></li>
                 </ul>
             </nav>
 

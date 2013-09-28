@@ -2,3 +2,7 @@ name: P2EE
 slogan: PHP for the Enterprise
 markdown: redcarpet
 pygments: true
+repoaction: follow
+repourl: https://github.com/P2EE
+project: p2ee
+baseurl: /
